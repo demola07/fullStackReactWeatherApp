@@ -1,0 +1,29 @@
+{
+  "name": "fullstackreactweatherapp",
+  "version": "1.0.0",
+  "description": "full stack react weather app",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demola07/fullStackReactWeatherApp.git"
+  },
+  "author": "Ademola Sobaki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/demola07/fullStackReactWeatherApp/issues"
+  },
+  "homepage": "https://github.com/demola07/fullStackReactWeatherApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "pg": "^7.15.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "nodemon": "^2.0.2"
+  }
+}
