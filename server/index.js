@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cities = require("./api/cities");
+const weather = require("./api/weather");
 var db = require("./database");
 
 const ENV = process.env.NODE_ENV;
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/cities", cities);
+app.use("/api/weather", weather);
 
 db.query("select NOW()", (err, res) => {
   if (err.error) return console.log(err.error);
