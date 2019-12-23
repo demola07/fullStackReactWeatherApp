@@ -42,7 +42,7 @@ class App extends Component {
   };
 
   handleAddCity = e => {
-    // e.preventDefault();
+    e.preventDefault();
     fetch("/api/cities", {
       method: "post",
       headers: {
@@ -58,9 +58,10 @@ class App extends Component {
   };
 
   getWeather = city => {
-    fetch(`/api/weather${city}`)
+    fetch(`/api/weather/${city}`)
       .then(res => res.json())
       .then(weather => {
+        console.log(weather);
         this.setState({ weather });
       });
   };
@@ -124,7 +125,7 @@ class App extends Component {
             </FormGroup>
           </Col>
         </Row>
-        <Weather></Weather>
+        <Weather data={this.state.weather}></Weather>
       </Container>
     );
   }
