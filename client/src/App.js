@@ -36,15 +36,17 @@ class App extends Component {
   };
 
   handleInputChange = e => {
+    console.log(e.target.value);
+
     this.setState({ newCityName: e.target.value });
   };
 
   handleAddCity = e => {
-    e.preventDefault();
+    // e.preventDefault();
     fetch("/api/cities", {
       method: "post",
       headers: {
-        "Content-Type": "applicaton/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({ city: this.state.newCityName })
     })
@@ -107,7 +109,18 @@ class App extends Component {
           <Col>
             <h1 className="display-5"> Current Weather</h1>
             <FormGroup>
-              <Input type="select" onChange={this.handleChangeCity}></Input>
+              <Input type="select" onChange={this.handleChangeCity}>
+                {this.state.cityList.length === 0 && (
+                  <option> No cities added yet</option>
+                )}
+                {this.state.cityList.length > 0 && (
+                  <option>Select a city</option>
+                )}
+
+                {this.state.cityList.map((city, i) => (
+                  <option key={i}>{city}</option>
+                ))}
+              </Input>
             </FormGroup>
           </Col>
         </Row>

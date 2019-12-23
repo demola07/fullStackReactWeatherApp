@@ -8,7 +8,7 @@ class Cities {
     });
   }
   static insert(city, callback) {
-    db.query("insert into cities (city_name) Values ($1)", [city], function(
+    db.query("INSERT INTO cities (city_name) VALUES ($1)", [city], function(
       err,
       res
     ) {
