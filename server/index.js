@@ -16,6 +16,14 @@ app.use(bodyParser.json());
 app.use("/api/cities", cities);
 app.use("/api/weather", weather);
 
+if (ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.use((req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
+}
+
+// PostgreSQL Database Connection
 db.query("select NOW()", (err, res) => {
   if (err.error) return console.log(err.error);
 
