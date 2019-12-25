@@ -1,6 +1,6 @@
 # Weather App
 
-## A simple weather app, which displays the current weather forcast of your selected location
+## A simple weather app, which displays the current weather forecast of your selected location
 
 ## Built using **React**, **Express** and **PostgreSQL**.
 

@@ -86,7 +86,7 @@ class App extends Component {
             <Jumbotron>
               <h1 className="display-3"> My Weather</h1>
               <p className="lead">
-                Get the Current Weather forcast for your favorite cities!!!
+                Get the Current Weather forecast for your favorite cities!!!
               </p>
 
               <InputGroup>
